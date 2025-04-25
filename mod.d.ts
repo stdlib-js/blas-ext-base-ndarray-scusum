@@ -1,4 +1,4 @@
-/**
+/*
 * @license Apache-2.0
 *
 * Copyright (c) 2025 The Stdlib Authors.
@@ -16,36 +16,29 @@
 * limitations under the License.
 */
 
-'use strict';
+// TypeScript Version: 4.1
 
-// MODULES //
+/// <reference types="https://cdn.jsdelivr.net/gh/stdlib-js/types@main/index.d.ts"/>
 
-var numelDimension = require( '@stdlib/ndarray-base-numel-dimension' );
-var getStride = require( '@stdlib/ndarray-base-stride' );
-var getOffset = require( '@stdlib/ndarray-base-offset' );
-var getData = require( '@stdlib/ndarray-base-data-buffer' );
-var strided = require( '@stdlib/blas-ext-base-scusum' ).ndarray;
-
-
-// MAIN //
+import { float32ndarray } from '@stdlib/types/ndarray';
 
 /**
 * Computes the cumulative sum of a one-dimensional single-precision floating-point ndarray.
 *
-* @param {ArrayLikeObject<Object>} arrays - array-like object containing an input ndarray, an output ndarray, and an ndarray containing the initial sum
-* @returns {number} sum
+* @param arrays - array-like object containing an input ndarray, an output ndarray, and ndarray containing the initial sum
+* @returns output ndarray
 *
 * @example
 * var Float32Array = require( '@stdlib/array-float32' );
 * var ndarray2array = require( '@stdlib/ndarray-to-array' );
-* var ndarray = require( '@stdlib/ndarray-base-ctor' );
 * var scalar2ndarray = require( '@stdlib/ndarray-base-from-scalar' );
+* var ndarray = require( '@stdlib/ndarray-base-ctor' );
 *
 * var xbuf = new Float32Array( [ 1.0, 3.0, 4.0, 2.0 ] );
 * var x = new ndarray( 'float32', xbuf, [ 4 ], [ 1 ], 0, 'row-major' );
 *
 * var ybuf = new Float32Array( [ 0.0, 0.0, 0.0, 0.0 ] );
-* var y = new ndarray( 'float32', xbuf, [ 4 ], [ 1 ], 0, 'row-major' );
+* var y = new ndarray( 'float32', ybuf, [ 4 ], [ 1 ], 0, 'row-major' );
 *
 * var initial = scalar2ndarray( 0.0, 'float32', 'row-major' );
 *
@@ -58,16 +51,9 @@ var strided = require( '@stdlib/blas-ext-base-scusum' ).ndarray;
 * var arr = ndarray2array( v );
 * // returns [ 1.0, 4.0, 8.0, 10.0 ]
 */
-function scusum( arrays ) {
-	var x = arrays[ 0 ];
-	var y = arrays[ 1 ];
-	var s = arrays[ 2 ];
-	var v = getData( s )[ getOffset( s ) ];
-	strided( numelDimension( x, 0 ), v, getData( x ), getStride( x, 0 ), getOffset( x ), getData( y ), getStride( y, 0 ), getOffset( y ) ); // eslint-disable-line max-len
-	return y;
-}
+declare function scusum( arrays: [ float32ndarray, float32ndarray, float32ndarray ] ): float32ndarray;
 
 
 // EXPORTS //
 
-module.exports = scusum;
+export = scusum;
