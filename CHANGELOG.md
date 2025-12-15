@@ -4,7 +4,7 @@
 
 <section class="release" id="unreleased">
 
-## Unreleased (2025-12-08)
+## Unreleased (2025-12-15)
 
 <section class="features">
 
@@ -32,6 +32,7 @@
 
 <details>
 
+-   [`800a7b9`](https://github.com/stdlib-js/stdlib/commit/800a7b95be99e40d9f56fd59ce8411c1652355e3) - **docs:** use correct buffer during output ndarray construction [(#9003)](https://github.com/stdlib-js/stdlib/pull/9003) _(by Kaustubh Patange)_
 -   [`922f550`](https://github.com/stdlib-js/stdlib/commit/922f5502739518bfbf14a690a7e73af49d3172c0) - **docs:** fix return type _(by Athan Reines)_
 -   [`721033e`](https://github.com/stdlib-js/stdlib/commit/721033eede9b3a4667728f40695d933f49f541c1) - **docs:** minor clean-up _(by Philipp Burckhardt)_
 -   [`f6e1c78`](https://github.com/stdlib-js/stdlib/commit/f6e1c7823e871a259642c49f1e6b40bd7bb73f4b) - **fix:** ensure accessor array support _(by Athan Reines)_
@@ -47,9 +48,10 @@
 
 ### Contributors
 
-A total of 2 people contributed to this release. Thank you to the following contributors:
+A total of 3 people contributed to this release. Thank you to the following contributors:
 
 -   Athan Reines
+-   Kaustubh Patange
 -   Philipp Burckhardt
 
 </section>
