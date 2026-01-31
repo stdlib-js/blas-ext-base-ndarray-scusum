@@ -48,7 +48,7 @@ limitations under the License.
 ## Usage
 
 ```javascript
-import scusum from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-ext-base-ndarray-scusum@esm/index.mjs';
+import scusum from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-ext-base-ndarray-scusum@v0.1.0-esm/index.mjs';
 ```
 
 #### scusum( arrays )
@@ -114,7 +114,7 @@ import ndarray from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-base-ctor@esm
 import zerosLike from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-zeros-like@esm/index.mjs';
 import scalar2ndarray from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-from-scalar@esm/index.mjs';
 import ndarray2array from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-to-array@esm/index.mjs';
-import scusum from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-ext-base-ndarray-scusum@esm/index.mjs';
+import scusum from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-ext-base-ndarray-scusum@v0.1.0-esm/index.mjs';
 
 var xbuf = discreteUniform( 10, -50, 50, {
     'dtype': 'float32'
