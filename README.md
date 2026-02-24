@@ -75,7 +75,6 @@ Computes the cumulative sum of a one-dimensional single-precision floating-point
 
 ```javascript
 var Float32Array = require( '@stdlib/array-float32' );
-var ndarray2array = require( '@stdlib/ndarray-to-array' );
 var scalar2ndarray = require( '@stdlib/ndarray-base-from-scalar' );
 var ndarray = require( '@stdlib/ndarray-base-ctor' );
 
@@ -88,13 +87,10 @@ var y = new ndarray( 'float32', ybuf, [ 4 ], [ 1 ], 0, 'row-major' );
 var initial = scalar2ndarray( 0.0, 'float32', 'row-major' );
 
 var v = scusum( [ x, y, initial ] );
-// returns <ndarray>
+// returns <ndarray>[ 1.0, 4.0, 8.0, 10.0 ]
 
 var bool = ( v === y );
 // returns true
-
-var arr = ndarray2array( v );
-// returns [ 1.0, 4.0, 8.0, 10.0 ]
 ```
 
 The function has the following parameters:
@@ -197,8 +193,8 @@ Copyright &copy; 2016-2026. The Stdlib [Authors][stdlib-authors].
 [npm-image]: http://img.shields.io/npm/v/@stdlib/blas-ext-base-ndarray-scusum.svg
 [npm-url]: https://npmjs.org/package/@stdlib/blas-ext-base-ndarray-scusum
 
-[test-image]: https://github.com/stdlib-js/blas-ext-base-ndarray-scusum/actions/workflows/test.yml/badge.svg?branch=v0.1.1
-[test-url]: https://github.com/stdlib-js/blas-ext-base-ndarray-scusum/actions/workflows/test.yml?query=branch:v0.1.1
+[test-image]: https://github.com/stdlib-js/blas-ext-base-ndarray-scusum/actions/workflows/test.yml/badge.svg?branch=main
+[test-url]: https://github.com/stdlib-js/blas-ext-base-ndarray-scusum/actions/workflows/test.yml?query=branch:main
 
 [coverage-image]: https://img.shields.io/codecov/c/github/stdlib-js/blas-ext-base-ndarray-scusum/main.svg
 [coverage-url]: https://codecov.io/github/stdlib-js/blas-ext-base-ndarray-scusum?branch=main
