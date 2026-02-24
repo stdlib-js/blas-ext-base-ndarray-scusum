@@ -41,43 +41,32 @@ limitations under the License.
 
 <!-- /.intro -->
 
+<section class="installation">
 
+## Installation
+
+```bash
+npm install @stdlib/blas-ext-base-ndarray-scusum
+```
+
+Alternatively,
+
+-   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm`][esm-url] branch (see [README][esm-readme]).
+-   If you are using Deno, visit the [`deno`][deno-url] branch (see [README][deno-readme] for usage intructions).
+-   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd`][umd-url] branch (see [README][umd-readme]).
+
+The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
+
+To view installation and usage instructions specific to each branch build, be sure to explicitly navigate to the respective README files on each branch, as linked to above.
+
+</section>
 
 <section class="usage">
 
 ## Usage
 
-To use in Observable,
-
 ```javascript
-scusum = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-ext-base-ndarray-scusum@umd/browser.js' )
-```
-The previous example will load the latest bundled code from the umd branch. Alternatively, you may load a specific version by loading the file from one of the [tagged bundles](https://github.com/stdlib-js/blas-ext-base-ndarray-scusum/tags). For example,
-
-```javascript
-scusum = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-ext-base-ndarray-scusum@v0.1.1-umd/browser.js' )
-```
-
-To vendor stdlib functionality and avoid installing dependency trees for Node.js, you can use the UMD server build:
-
-```javascript
-var scusum = require( 'path/to/vendor/umd/blas-ext-base-ndarray-scusum/index.js' )
-```
-
-To include the bundle in a webpage,
-
-```html
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/blas-ext-base-ndarray-scusum@umd/browser.js"></script>
-```
-
-If no recognized module system is present, access bundle contents via the global scope:
-
-```html
-<script type="text/javascript">
-(function () {
-    window.scusum;
-})();
-</script>
+var scusum = require( '@stdlib/blas-ext-base-ndarray-scusum' );
 ```
 
 #### scusum( arrays )
@@ -86,7 +75,6 @@ Computes the cumulative sum of a one-dimensional single-precision floating-point
 
 ```javascript
 var Float32Array = require( '@stdlib/array-float32' );
-var ndarray2array = require( '@stdlib/ndarray-to-array' );
 var scalar2ndarray = require( '@stdlib/ndarray-base-from-scalar' );
 var ndarray = require( '@stdlib/ndarray-base-ctor' );
 
@@ -99,13 +87,10 @@ var y = new ndarray( 'float32', ybuf, [ 4 ], [ 1 ], 0, 'row-major' );
 var initial = scalar2ndarray( 0.0, 'float32', 'row-major' );
 
 var v = scusum( [ x, y, initial ] );
-// returns <ndarray>
+// returns <ndarray>[ 1.0, 4.0, 8.0, 10.0 ]
 
 var bool = ( v === y );
 // returns true
-
-var arr = ndarray2array( v );
-// returns [ 1.0, 4.0, 8.0, 10.0 ]
 ```
 
 The function has the following parameters:
@@ -132,18 +117,13 @@ The function has the following parameters:
 
 <!-- eslint no-undef: "error" -->
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<body>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/random-array-discrete-uniform@umd/browser.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-base-ctor@umd/browser.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-zeros-like@umd/browser.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-from-scalar@umd/browser.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-to-array@umd/browser.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/blas-ext-base-ndarray-scusum@umd/browser.js"></script>
-<script type="text/javascript">
-(function () {
+```javascript
+var discreteUniform = require( '@stdlib/random-array-discrete-uniform' );
+var ndarray = require( '@stdlib/ndarray-base-ctor' );
+var zerosLike = require( '@stdlib/ndarray-zeros-like' );
+var scalar2ndarray = require( '@stdlib/ndarray-from-scalar' );
+var ndarray2array = require( '@stdlib/ndarray-to-array' );
+var scusum = require( '@stdlib/blas-ext-base-ndarray-scusum' );
 
 var xbuf = discreteUniform( 10, -50, 50, {
     'dtype': 'float32'
@@ -160,11 +140,6 @@ var initial = scalar2ndarray( 100.0, {
 
 var v = scusum( [ x, y, initial ] );
 console.log( ndarray2array( v ) );
-
-})();
-</script>
-</body>
-</html>
 ```
 
 </section>
@@ -218,8 +193,8 @@ Copyright &copy; 2016-2026. The Stdlib [Authors][stdlib-authors].
 [npm-image]: http://img.shields.io/npm/v/@stdlib/blas-ext-base-ndarray-scusum.svg
 [npm-url]: https://npmjs.org/package/@stdlib/blas-ext-base-ndarray-scusum
 
-[test-image]: https://github.com/stdlib-js/blas-ext-base-ndarray-scusum/actions/workflows/test.yml/badge.svg?branch=v0.1.1
-[test-url]: https://github.com/stdlib-js/blas-ext-base-ndarray-scusum/actions/workflows/test.yml?query=branch:v0.1.1
+[test-image]: https://github.com/stdlib-js/blas-ext-base-ndarray-scusum/actions/workflows/test.yml/badge.svg?branch=main
+[test-url]: https://github.com/stdlib-js/blas-ext-base-ndarray-scusum/actions/workflows/test.yml?query=branch:main
 
 [coverage-image]: https://img.shields.io/codecov/c/github/stdlib-js/blas-ext-base-ndarray-scusum/main.svg
 [coverage-url]: https://codecov.io/github/stdlib-js/blas-ext-base-ndarray-scusum?branch=main
